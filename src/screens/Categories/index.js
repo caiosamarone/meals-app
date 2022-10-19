@@ -1,20 +1,31 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
-import { CATEGORIES } from "utils/mock/dummyData";
+import { CATEGORIES as MOCK_CATEGORIES } from "utils/mock/dummyData";
+import { FlatList } from "react-native";
+import CategoryGridTile from "./CategoryGridTile";
+import { useNavigation } from "@react-navigation/native";
 
-const renderCategoryItem = (item) => {
-  retr;
-};
+function Categories({ navigation }) {
+  const pressHandler = () => {
+    navigation.navigate("MealOverview");
+  };
 
-const Categories = () => {
+  const renderCategoryItem = ({ item }) => {
+    return (
+      <CategoryGridTile
+        title={item.title}
+        color={item.color}
+        onPress={pressHandler}
+      />
+    );
+  };
+
   return (
     <FlatList
-      data={CATEGORIES}
+      data={MOCK_CATEGORIES}
       keyExtractor={(item) => item.id}
       renderItem={renderCategoryItem}
+      numColumns={2}
     />
   );
-};
+}
 
 export default Categories;
-
-const styles = StyleSheet.create({});
