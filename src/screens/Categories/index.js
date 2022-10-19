@@ -1,11 +1,11 @@
-import { CATEGORIES as MOCK_CATEGORIES } from "utils/mock/dummyData";
-import { FlatList } from "react-native";
-import CategoryGridTile from "./CategoryGridTile";
-import { useNavigation } from "@react-navigation/native";
+import { CATEGORIES as MOCK_CATEGORIES } from 'utils/mock/dummyData';
+import { FlatList } from 'react-native';
+import CategoryGridTile from './CategoryGridTile';
+import { useNavigation } from '@react-navigation/native';
 
 function Categories({ navigation }) {
   const pressHandler = () => {
-    navigation.navigate("MealOverview");
+    navigation.navigate('MealOverview');
   };
 
   const renderCategoryItem = ({ item }) => {
@@ -21,7 +21,7 @@ function Categories({ navigation }) {
   return (
     <FlatList
       data={MOCK_CATEGORIES}
-      keyExtractor={(item) => item.id}
+      keyExtractor={item => item.id}
       renderItem={renderCategoryItem}
       numColumns={2}
     />

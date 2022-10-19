@@ -1,13 +1,13 @@
-import { Pressable, StyleSheet, Text, View, Platform } from "react-native";
+import { Pressable, StyleSheet, Text, View, Platform } from 'react-native';
 
 const CategoryGridTile = ({ title, color, onPress }) => {
   return (
     <View style={styles.gridItem}>
       <Pressable
-        android_ripple={{ color: "#ccc" }}
+        android_ripple={{ color: '#ccc' }}
         style={({ pressed }) => [
           styles.button,
-          pressed ? styles.buttonPressed : null,
+          pressed ? styles.buttonPressed : null
         ]}
         onPress={onPress}
       >
@@ -28,28 +28,28 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 8,
     elevation: 4,
-    backgroundColor: "#ffffff",
-    shadowColor: "black",
+    backgroundColor: '#ffffff',
+    shadowColor: 'black',
     shadowOpacity: 0.25,
     shadowOffset: { width: 2, height: 2 },
     shadowRadius: 8,
-    overflow: Platform.OS === "android" ? "hidden" : "visible",
+    overflow: Platform.OS === 'android' ? 'hidden' : 'visible'
   },
   button: {
-    flex: 1,
+    flex: 1
   },
   buttonPressed: {
-    opacity: 0.5,
+    opacity: 0.5
   },
   innerContainer: {
     flex: 1,
     padding: 16,
     borderRadius: 8,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   title: {
-    fontWeight: "bold",
-    fontSize: 18,
-  },
+    fontWeight: 'bold',
+    fontSize: 18
+  }
 });
